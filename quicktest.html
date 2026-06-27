@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body{
+            margin: 0;
+        }
+        #test{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+            width: 100%;
+            color: white;
+            min-height: 100vh;
+            background: url('./src/assets/randomTest.png') center / cover no-repeat;
+        }
+
+        .introduction{
+            max-width: 550px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 2rem;
+            gap: 1.5rem;
+            align-items: flex-start;
+            font-family: Arial;
+        }
+        .hi{
+            margin-bottom: -1rem;
+            font-family: Arial;
+            letter-spacing: 1px;
+            color: transparent;
+            font-size: 2rem;
+            background: linear-gradient(blue, purple);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .name{
+            margin: 0;
+            font-size: 5.5rem;
+            font-family: Arial;
+            font-weight: bold;
+            background: linear-gradient(white, #3a0492);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        .position{
+            margin-top: -1rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        hr{
+            background: linear-gradient(to right, purple, blue);
+            border: 1px solid blue;
+            width: 4rem;
+            margin-left: 0;
+            margin-top: -1rem;
+        }
+        .short-intro{
+            margin-top: -1rem;
+            font-size: 15px;
+            width: 250px;
+            flex-wrap: wrap;
+        }
+        .buttons{
+            margin-left: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+        .buttons > button{
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        .work{
+            background: linear-gradient(to right, rgb(152, 83, 209) 30%, rgb(61, 61, 209));
+            color: white;
+            border: 1px solid transparent;
+        }
+        .contact{
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        .links{
+            display: flex;
+            gap: 2rem;
+            margin-left: 2rem;
+        }
+        .links > .link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            background: rgba(41, 41, 41, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .links > .link > i{
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        @media (min-width: 1000px) {
+            .hi{
+                font-size: 2.5rem;
+            }
+            .name{
+                max-width: 700px;
+                font-size: 6rem;
+                margin: -1rem 0;
+            }
+            .position{
+                font-size: 1.5rem;
+            }
+            .short-intro{
+                font-size: 1.3rem;
+                width: 400px;
+            }
+            hr{
+                width: 7rem;
+            }
+            .buttons > button{
+                font-size: 1.3rem;
+                padding: 1.5rem;
+                width: 250px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section id="test">
+        <div class="introduction">
+            <span class="hi">HI, I'M</span>
+            <h3 class="name">Gabriel Dodowei</h3>
+            <span class="position">FRONTEND DEVELOPER</span>
+            <hr />
+            <div class="short-intro">
+                I build responsive, accessible, and user-friendly web applications with modern technologies.
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="work">View my Work&ensp;&rarr;</button>
+            <button class="contact">Contact Me</button>
+        </div>
+        <div class="links">
+            <div class="link"><i class="fa-brands fa-github"></i></div>
+            <div class="link"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="link"><i class="fa-regular fa-envelope"></i></div>
+        </div>
+    </section>
+</body>
+</html>
