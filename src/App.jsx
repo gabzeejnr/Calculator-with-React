@@ -17,21 +17,15 @@ export default function Calculator() {
     setDisplay(0);
   };
 
+  const dotBtn = () => {
+    setDisplay(prev => prev + '.')
+  };
+
   const deleteBtn = () => {
     setDisplay(prev => {
       const text = String(prev).slice(0, -1);
       return text === "" ? 0 : text;
-    })
-  };
-
-
-  //This Code Handles Number Display.... Partly
-  const numClick = (num) => {
-    if (display === 0) {
-      setDisplay(String(num));
-    } else {
-      setDisplay(prev => prev + String(num));
-    };
+    });
   };
 
   const operator = (op) => {
@@ -39,6 +33,24 @@ export default function Calculator() {
     setOperand(op);
     setDisplay(0);
   }
+
+  const percentageBtn = () => {
+    if(!(display.includes('%'))) {
+      setDisplay(prev => prev / 100);
+    }
+    setFirstNum(prev => display)
+    alert(firstNum)
+  };
+
+
+  //This Code Handles Number Display.... Partly
+  const numClick = (num) => {
+    if (display === 0) {
+      if (num !== 0) setDisplay(String(num));
+    } else {
+      setDisplay(prev => prev + String(num));
+    };
+  };
 
   const operandClick = (e) => {
     if (e === '+') operator('+');
@@ -74,7 +86,7 @@ export default function Calculator() {
         <div className="calc-grid">
 
           <button className="btn btn-action" onClick={clearDisplay}>AC</button>
-          <button className="btn btn-action">%</button>
+          <button className="btn btn-action" onClick={percentageBtn}>%</button>
           <button className="btn btn-action" onClick={deleteBtn}><FontAwesomeIcon icon={faDeleteLeft} /></button>
           <button className="btn btn-operator" onClick={ (e) => operandClick(e.target.innerText)}>÷</button>
 
@@ -94,7 +106,7 @@ export default function Calculator() {
           <button className="btn btn-operator" onClick={ (e) => operandClick(e.target.innerText)}>+</button>
 
           <button className="btn btn-zero" onClick={ () => numClick(0)}>0</button>
-          <button className="btn">.</button>
+          <button className="btn" onClick={dotBtn}>.</button>
           <button className="btn btn-operator" onClick={clickEqual}>=</button>
         </div>
       </div>
